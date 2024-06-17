@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboTech- Статии</title>
+    <link rel="icon" href="images/3(1).png" type="image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav>   
+        <img src="images/logo.png" alt="">
+        <div class="navigation">   
+            <ul>
+                <i id="menu-close" class="fas fa-times"></i>
+                <li><a href="index.html" >Начало</a></li>
+                <li><a href="about.html" >За нас</a></li>
+                <li><a href="blog.html" class="active">Статии</a></li>
+                <li><a href="course.html">Курсове</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+            <img id="menu-btn" src="images/menu.png" alt="">
+         </div>
+    </nav>
+
+    <section id="blog-container">
+        <div class="blogs postpage">
+            <div class="post">
+                <img src="images/b4.png" alt="">
+                <h3>Как Академията по Програмиране и Роботика Вдъхновява Новото Поколение</h3>
+                <p>Академията по програмиране и роботика за деца играе ключова роля в оформянето на бъдещето на новото поколение. 
+                    Чрез иновативни методи на преподаване и практическо обучение, академията вдъхновява децата да изследват света 
+                    на технологиите и да развиват своите интереси в областта на програмирането и роботиката.</p>
+                <p>Един от основните аспекти, с които академията вдъхновява децата, е предоставянето на възможности за създаване на собствени 
+                    проекти и роботи. Този практически подход позволява на учениците да видят резултатите от своите усилия и да се гордеят с 
+                    постиженията си. Проектите често включват реални проблеми, които децата трябва да решат чрез програмиране и роботика, 
+                    което насърчава креативното мислене и иновациите.</p>
+                <p>Академията също така предоставя платформа за сътрудничество и обмен на идеи между учениците. Чрез груповите проекти 
+                    и съвместните задачи, децата се научават да работят в екип, да комуникират ефективно и да ценят различните перспективи 
+                    и подходи на своите съученици. Това развива техните социални умения и ги подготвя за бъдеща работа в екип.</p>
+                <p>Освен техническите умения, академията по програмиране и роботика насърчава децата да бъдат любознателни и да се стремят 
+                    към постоянен личностен и професионален растеж. Чрез вдъхновяващите преподаватели и ментори, учениците получават 
+                    подкрепа и мотивация да преследват своите мечти и да не се страхуват от предизвикателствата.</p>
+                <p>В крайна сметка, академията подготвя новото поколение за технологично бъдеще, където уменията по програмиране и роботика 
+                    ще бъдат още по-ценни и търсени. Децата, които участват в тези програми, не само развиват своите технически умения, 
+                    но и изграждат увереност и амбиция да постигнат големи неща в живота си.</p>
+                <a class="blue" href="blog.html">Върни се</a>
+            </div>
+
+        </div>
+        <div id="comments-section">
+            <h4>Коментари</h4>
+            <div id="comments-list"></div>
+            <form id="comment-form">
+                <input type="text" id="name" name="name" placeholder="Вашето име" required>
+                <input type="email" id="email" name="email" placeholder="Вашият имейл" required>
+                <textarea id="comment" name="comment" placeholder="Вашият коментар" required></textarea>
+                <button type="submit">Изпрати</button>
+            </form>
+        </div>
+
+        <!-- Edit Comment Section -->
+        <div id="edit-comment-section" style="display:none;">
+            <h4>Редактиране на коментар</h4>
+            <input type="hidden" id="edit-comment-id">
+            <textarea id="edit-comment" placeholder="Нов коментар" required></textarea>
+            <input type="email" id="edit-email" placeholder="Вашият имейл" required>
+            <button id="edit-submit">Запази</button>
+            <button id="edit-cancel">Отказ</button>
+        </div>
+
+
+    </section>
+
+    
+
+
+    <my-footer></my-footer>
+     
+
+    <script>
+        $("#menu-btn").click(function() {
+            $("nav .navigation ul").addClass("active");
+        });
+        $("#menu-close").click(function() {
+            $("nav .navigation ul").removeClass("active");
+        });
+        // Submit comment form
+        $("#comment-form").on("submit", function(event) {
+            event.preventDefault();
+            var formData = {
+                name: $("#name").val(),
+                email: $("#email").val(),
+                comment: $("#comment").val(),
+                post_id: 4 // Предполага се, че ID на поста е 1, сменете го според нуждите
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "submit_comment.php",
+                data: formData,
+                dataType: "json",
+                encode: true,
+            }).done(function(data) {
+                if (data.success) {
+                    $("#comments-list").append("<div data-id='" + data.comment.id + "'><p><strong>" + data.comment.name + "</strong>: " + data.comment.comment + "</p><button class='edit-comment'>Редактирай</button></div>");
+                    $("#comment-form")[0].reset();
+                } else {
+                    alert("Грешка: " + data.message);
+                }
+            });
+        });
+
+        // Load comments
+        $(document).ready(function() {
+            $.ajax({
+                type: "GET",
+                url: "fetch_comments.php",
+                data: { post_id: 4 },
+                dataType: "json",
+                encode: true,
+            }).done(function(data) {
+                if (data.success) {
+                    data.comments.forEach(function(comment) {
+                        $("#comments-list").append("<div data-id='" + comment.id + "'><p><strong>" + comment.name + "</strong>: " + comment.comment + "</p><button class='edit-comment'>Редактирай</button></div>");
+                    });
+                } else {
+                    $("#comments-list").append("<p>Все още няма коментари. Бъдете първи!</p>");
+                }
+            });
+        });
+
+        // Show edit form
+        $(document).on('click', '.edit-comment', function() {
+            var commentId = $(this).parent().data('id');
+            var commentText = $(this).siblings('p').text().split(": ")[1];
+            $("#edit-comment-id").val(commentId);
+            $("#edit-comment").val(commentText);
+            $("#edit-comment-section").show();
+        });
+
+        // Submit edited comment
+        $("#edit-submit").on('click', function() {
+            var formData = {
+                comment_id: $("#edit-comment-id").val(),
+                new_comment: $("#edit-comment").val(),
+                email: $("#edit-email").val()
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "update_comment.php",
+                data: formData,
+                dataType: "json",
+                encode: true,
+            }).done(function(data) {
+                if (data.success) {
+                    var commentId = formData.comment_id;
+                    $("div[data-id='" + commentId + "'] p").text(formData.new_comment);
+                    $("#edit-comment-section").hide();
+                } else {
+                    alert("Грешка: " + data.message + " | Съхранен имейл: " + data.stored_email + " | Подаден имейл: " + data.provided_email);
+                }
+            });
+        });
+
+        // Cancel edit
+        $("#edit-cancel").on('click', function() {
+            $("#edit-comment-section").hide();
+        });
+    </script>
+
+</body>
+
+</html>

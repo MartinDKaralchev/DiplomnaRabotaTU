@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboTech- Контакти</title>
+    <link rel="icon" href="images/3(1).png" type="image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav>   
+        <img src="images/logo.png" alt="">
+        <div class="navigation">   
+            <ul>
+                <i id="menu-close" class="fas fa-times"></i>
+                <li><a href="index.html" >Начало</a></li>
+                <li><a href="about.html" >За нас</a></li>
+                <li><a href="blog.html">Статии</a></li>
+                <li><a href="course.html">Курсове</a></li>
+                <li><a href="contact.html"class="active">Контакти</a></li>
+            </ul>
+            <img id="menu-btn" src="images/menu.png" alt="">
+         </div>
+    </nav>
+
+    <section id="about-home">
+        <h2>Контакти</h2>
+    </section>
+
+    <section id="contact">
+        <div class="getin">
+            <h2>Свържете се с нас</h2>
+            <p>Търсите помощ? Попълнете формата и започнете ново приключение.</p>
+
+            <div class="getin-details">
+                <h3>Адрес</h3>
+                <div>
+                    <i class="far fa-home get"></i>
+                    <p>к-п Пентагон етаж 1 офис 12, град Кърджали</p>
+                </div>
+                <h3>Телефон</h3>
+                <div>
+                    <i class="fas fa-phone-alt get"></i>
+                    <p>(+359) 88 274 3043 <br> (+359) 88 754 8254</p>
+                </div>
+                <h3>Поща</h3>
+                <div>
+                    <i class="fal fa-envelope-open-text get"></i>
+                    <p>robotechkj@gmail.com <br> namarti1425@gmail.com
+                    </p>
+                </div>
+                <h3>Follow Us</h3>
+                <div class="pro-link">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+        <form action="#">
+            <div class="form">
+                <h4>Винаги сме готови да помогнем!</h4>
+                <p>Ако имате въпроси, предложения или нужда от допълнителна информация, 
+                    не се колебайте да се свържете с нас. Попълнете формата по-долу и 
+                    ние ще се свържем с вас възможно най-скоро.
+                </p>
+                    <!--<input type="text" placeholder="Клас" name="studentClass" id="studentClass" class="item" autocomplete="off">-->
+                <div class="form-col">
+                    <input type="text" placeholder="Имена" name="names" id="names" class="item" autocomplete="off">
+                    <div class="error-txt">Празно поле</div>
+                </div>
+
+                <div class="form-col">
+                    <input type="text" placeholder="Поща" name="email" id="email" class="item" autocomplete="off">
+                    <div class="error-txt email">Празно поле</div>
+                </div>
+
+                <div class="form-col">
+                    <input type="text" placeholder="Тема" name="subject" id="subject" class="item" autocomplete="off">
+                    <div class="error-txt">Празно поле</div>
+                </div>
+
+                <div class="form-col">
+                    <textarea name="que" id="que" cols="30" rows="8" placeholder="Как можем да помогнем?" class="item" autocomplete="off" ></textarea>
+                    <div class="error-txt">Празно поле</div>
+                </div>
+
+                <div class="form-col">
+                    <button type="submit">Изпрати</button>
+                </div>
+            </div>
+        </form>
+    </section>    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="form2.js"></script>
+    <section id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186.35478120926695!2d25.367058450698224!3d41.64112347164335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ad721a795d0b99%3A0xea6c7c07b656d346!2z0YPQuy4g0JTQttC-0YDQtNC2INCS0LDRiNC40L3Qs9GC0L7QvSAxLCA2NjAwINCa0YrRgNC00LbQsNC70Lg!5e0!3m2!1sbg!2sbg!4v1717872556666!5m2!1sbg!2sbg" 
+            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <script src="main.js"></script>
+    <my-footer></my-footer>
+
+    <script>
+        $("#menu-btn").click(function() {
+            $("nav .navigation ul").addClass("active");
+        });
+        $("#menu-close").click(function() {
+            $("nav .navigation ul").removeClass("active");
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboTech- Статии</title>
+    <link rel="icon" href="images/3(1).png" type="image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <img src="images/logo.png" alt="">
+        <div class="navigation">
+            <ul>
+                <i id="menu-close" class="fas fa-times"></i>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="about.html">За нас</a></li>
+                <li><a href="blog.html" class="active">Статии</a></li>
+                <li><a href="course.html">Курсове</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+            <img id="menu-btn" src="images/menu.png" alt="">
+        </div>
+    </nav>
+
+    <section id="blog-container">
+        <div class="blogs postpage">
+            <div class="post">
+                <img src="images/b1.jpg" alt="">
+                <h3>Как Академията по Програмиране и Роботика Променя Бъдещето на Децата</h3>
+                <p>В днешния бързоразвиващ се технологичен свят, програмирането и роботиката са умения, които стават все по-ценни. Академията по програмиране и роботика за деца предлага уникална възможност на младите умове да се запознаят с тези иновативни дисциплини още от рано. Чрез интерактивни уроци, практически проекти и вдъхновяващи преподаватели, академията създава среда, в която децата не само усвояват технически знания, но и развиват креативността и критичното мислене.</p>
+            
+                <h2>Какво предлага академията?</h2>
+                <p>Академията по програмиране и роботика за деца предоставя на младите ученици шанс да се впуснат в света на кода и машините по забавен и достъпен начин. Учебните програми са съобразени с възрастта и нивото на знания на децата, като същевременно насърчават тяхната любознателност и ентусиазъм.</p>
+                
+                <h3>Интерактивни уроци</h3>
+                <p>Уроците в академията са интерактивни и включват множество практически проекти, които помагат на децата да приложат наученото на практика. Тези проекти не само развиват техническите им умения, но и насърчават екипната работа и креативността.</p>
+                
+                <h3>Практически проекти</h3>
+                <p>Практическите проекти са сърцето на обучението в академията. Децата работят върху реални проблеми и задачи, което им помага да развият своето логическо мислене и способността за решаване на проблеми.</p>
+                
+                <h3>Вдъхновяващи преподаватели</h3>
+                <p>Преподавателите в академията са не само експерти в своите области, но и вдъхновяващи личности, които мотивират децата да учат и да се развиват. Те използват иновативни методи на преподаване, които правят ученето интересно и забавно.</p>
+                
+                <h2>Как академията подготвя децата за бъдещето?</h2>
+                <p>Академията по програмиране и роботика не само предоставя на децата технически знания, но и развива важни умения, които ще им бъдат полезни във всяка област от живота. Чрез обучението в академията, децата стават по-креативни, уверени и готови да се изправят пред предизвикателствата на бъдещето.</p>
+                
+                <h3>Креативност и критично мислене</h3>
+                <p>Обучението в академията насърчава креативността и критичното мислене на децата. Те се учат да намират иновативни решения на сложни задачи и да мислят извън рамките на стандартното.</p>
+                
+                <h3>Екипна работа и комуникационни умения</h3>
+                <p>Проектите в академията изискват работа в екип, което помага на децата да развият своите комуникационни умения и способността да работят ефективно с другите. Това са умения, които са изключително важни за техния бъдещ професионален живот.</p>
+                
+                <h3>Увереност и самочувствие</h3>
+                <p>Успехите в академията дават на децата увереността, че могат да се справят с нови предизвикателства и да постигат своите цели. Това самочувствие е ключово за техния бъдещ успех във всяка област.</p>
+                
+                <p>Академията по програмиране и роботика за деца е мястото, където младите умове могат да развият своя потенциал и да се подготвят за един все по-технологичен свят. Чрез интерактивни уроци, практически проекти и вдъхновяващи преподаватели, академията не само предоставя технически знания, но и развива важни умения, които ще бъдат полезни на децата през целия им живот.</p>
+            
+                <a class="blue" href="blog.html">Върни се</a>
+            </div>
+    
+        </div>
+        <div id="comments-section">
+            <h4>Коментари</h4>
+            <div id="comments-list"></div>
+            <form id="comment-form">
+                <input type="text" id="name" name="name" placeholder="Вашето име" required>
+                <input type="email" id="email" name="email" placeholder="Вашият имейл" required>
+                <textarea id="comment" name="comment" placeholder="Вашият коментар" required></textarea>
+                <button type="submit">Изпрати</button>
+            </form>
+        </div>
+
+        <!-- Edit Comment Section -->
+        <div id="edit-comment-section" style="display:none;">
+            <h4>Редактиране на коментар</h4>
+            <input type="hidden" id="edit-comment-id">
+            <textarea id="edit-comment" placeholder="Нов коментар" required></textarea>
+            <input type="email" id="edit-email" placeholder="Вашият имейл" required>
+            <button id="edit-submit">Запази</button>
+            <button id="edit-cancel">Отказ</button>
+        </div>
+    </section>
+
+    <my-footer></my-footer>
+
+    <script>
+        $("#menu-btn").click(function() {
+            $("nav .navigation ul").addClass("active");
+        });
+        $("#menu-close").click(function() {
+            $("nav .navigation ul").removeClass("active");
+        });
+
+        // Submit comment form
+        $("#comment-form").on("submit", function(event) {
+            event.preventDefault();
+            var formData = {
+                name: $("#name").val(),
+                email: $("#email").val(),
+                comment: $("#comment").val(),
+                post_id: 1 // Предполага се, че ID на поста е 1, сменете го според нуждите
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "submit_comment.php",
+                data: formData,
+                dataType: "json",
+                encode: true,
+            }).done(function(data) {
+                if (data.success) {
+                    $("#comments-list").append("<div data-id='" + data.comment.id + "'><p><strong>" + data.comment.name + "</strong>: " + data.comment.comment + "</p><button class='edit-comment'>Редактирай</button></div>");
+                    $("#comment-form")[0].reset();
+                } else {
+                    alert("Грешка: " + data.message);
+                }
+            });
+        });
+
+        // Load comments
+        $(document).ready(function() {
+            $.ajax({
+                type: "GET",
+                url: "fetch_comments.php",
+                data: { post_id: 1 },
+                dataType: "json",
+                encode: true,
+            }).done(function(data) {
+                if (data.success) {
+                    data.comments.forEach(function(comment) {
+                        $("#comments-list").append("<div data-id='" + comment.id + "'><p><strong>" + comment.name + "</strong>: " + comment.comment + "</p><button class='edit-comment'>Редактирай</button></div>");
+                    });
+                } else {
+                    $("#comments-list").append("<p>Все още няма коментари. Бъдете първи!</p>");
+                }
+            });
+        });
+
+        // Show edit form
+        $(document).on('click', '.edit-comment', function() {
+            var commentId = $(this).parent().data('id');
+            var commentText = $(this).siblings('p').text().split(": ")[1];
+            $("#edit-comment-id").val(commentId);
+            $("#edit-comment").val(commentText);
+            $("#edit-comment-section").show();
+        });
+
+        // Submit edited comment
+        $("#edit-submit").on('click', function() {
+            var formData = {
+                comment_id: $("#edit-comment-id").val(),
+                new_comment: $("#edit-comment").val(),
+                email: $("#edit-email").val()
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "update_comment.php",
+                data: formData,
+                dataType: "json",
+                encode: true,
+            }).done(function(data) {
+                if (data.success) {
+                    var commentId = formData.comment_id;
+                    $("div[data-id='" + commentId + "'] p").text(formData.new_comment);
+                    $("#edit-comment-section").hide();
+                } else {
+                    alert("Грешка: " + data.message + " | Съхранен имейл: " + data.stored_email + " | Подаден имейл: " + data.provided_email);
+                }
+            });
+        });
+
+        // Cancel edit
+        $("#edit-cancel").on('click', function() {
+            $("#edit-comment-section").hide();
+        });
+    </script>
+</body>
+</html>
